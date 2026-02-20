@@ -22,17 +22,20 @@ public class BufferControl {
     public synchronized void readBuffer() throws IOException {
         while(bufferEmpty) {
             try {
+                System.out.println("Waiting for buffer...");
                 wait();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 System.err.println("Thread Interrupted");
             }
         }
+        System.out.println("Hilo actual en read"+Thread.currentThread().getName());
         bufferEmpty=true;
         String line;
         while((line = br.readLine())!=null) {
             view.showFile(line);
         }
+        System.out.println("Buffer read...");
         notifyAll();
 
 
@@ -40,16 +43,19 @@ public class BufferControl {
     public synchronized void writeBuffer() throws IOException {
         while(!bufferEmpty) {
             try {
+                System.out.println("Waiting for buffer to be written...");
                 wait();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 System.err.println("Thread Interrupted");
             }
         }
+        System.out.println("Hilo actual en write"+Thread.currentThread().getName());
         bufferEmpty=false;
         bw.write(buffer.getText());
         bw.newLine();
         bw.flush();
+        
         notifyAll();
     }
 

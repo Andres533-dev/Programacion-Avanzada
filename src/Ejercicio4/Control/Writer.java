@@ -1,10 +1,10 @@
-package Ejercicio3.Control;
+package Ejercicio4.Control;
 
 import java.io.IOException;
 
-public class Producer extends Thread {
+public class Writer extends Thread {
     private BufferControl buffer;
-    public Producer(BufferControl buffer) {
+    public Writer(BufferControl buffer) {
         this.buffer=buffer;
     }
     public void run() {

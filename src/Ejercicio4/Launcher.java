@@ -1,7 +1,6 @@
-package Ejercicio3;
+package Ejercicio4;
 
-
-import Ejercicio3.Control.GeneralController;
+import Ejercicio4.Control.GeneralController;
 
 import java.io.IOException;
 
@@ -9,4 +8,5 @@ public class Launcher {
     public static void main(String[] args) throws IOException {
         new GeneralController();
     }
+
 }

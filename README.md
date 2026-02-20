@@ -13,3 +13,14 @@ Este proyecto contiene ejercicios y ejemplos prácticos que implementan concepto
 ## 🧠 Estructura del repositorio
 
 El código fuente está en la carpeta:
+Allí se organizan los paquetes y clases según los **talleres o ejercicios** que se están realizando, por ejemplo:
+
+- Ejercicios de sincronización de hilos.
+- Ejercicios de control de acceso a recursos.
+- Problemas clásicos de concurrencia.
+
+## 🚀 Cómo ejecutar
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Andres533-dev/Programacion-Avanzada.git
